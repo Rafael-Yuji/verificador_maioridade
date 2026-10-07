@@ -4,6 +4,8 @@ function verificarIdade() {
   const idadeDigitada = parseInt(elementoInput.value);
   const nomeDigitado = document.getElementById("campoNome").value;
 
+  const anosFaltantes = 20 - idadeDigitada;
+
   // 2. Localiza o elemento onde o texto de resultado será exibido
   const elementoResultado = document.getElementById("mensagemResultado");
 
@@ -16,11 +18,11 @@ function verificarIdade() {
 
   // 4. Tomada de decisão: bifurcação do fluxo entre maior e menor de idade
   if (idadeDigitada >= 18) {
-    elementoResultado.innerText = `Olá, ${nomeDigitado}! Você tem ${idadeDigitada} anos e seu acesso foi liberado com sucesso.`;
+    elementoResultado.innerText = `Olá, ${nomeDigitado}! Você tem ${idadeDigitada} ano(s) e seu acesso foi liberado com sucesso.`;
     elementoResultado.style.color = "#16a34a";
     console.log(`Verificação aprovada: ${idadeDigitada} anos (Maior de idade)`);
   } else {
-    elementoResultado.innerText = `Acesso negado para ${nomeDigitado}: Você tem ${idadeDigitada} anos e ainda não possui a idade mínima permitida.`;
+    elementoResultado.innerText = `Acesso negado para ${nomeDigitado}: Você tem ${idadeDigitada} ano(s) e ainda não possui a idade mínima permitida. Resta ${anosFaltantes} ano(s) para alcançar a maioridade.`;
     elementoResultado.style.color = "#d97706";
     console.log(`Verificação informativa: ${idadeDigitada} anos (Menor de idade)`);
   }
