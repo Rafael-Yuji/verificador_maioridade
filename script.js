@@ -2,7 +2,7 @@ function verificarIdade() {
   // 1. Captura o valor digitado no campo de input
   const elementoInput = document.getElementById("campoIdade");
   const idadeDigitada = parseInt(elementoInput.value);
-  const nomeDigitado = document.getElementById("campoNome");
+  const nomeDigitado = document.getElementById("campoNome").value;
 
   // 2. Localiza o elemento onde o texto de resultado será exibido
   const elementoResultado = document.getElementById("mensagemResultado");
